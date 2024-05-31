@@ -1,5 +1,5 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-
+const products[];
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
    - name: name of product (string)
@@ -8,6 +8,30 @@
    - productId: unique id for the product (number)
    - image: picture of product (url string)
 */
+products.push(
+  {
+    name: "Cherry",
+    price: 2.98,
+    quantity: 0,
+    productId: 1,
+    image: "/starter/src/images/cherry.jpg"
+  },
+  {
+    name: "Orange",
+    price: 3.98,
+    quantity: 0,
+    productId: 2,
+    image: "/starter/src/images/orange.jpg"
+  },
+  {
+    name: "Strawberry",
+    price: 3.65,
+    quantity: 0,
+    productId: 3,
+    image: "/starter/src/images/strawberry.jpg"
+  },
+
+);
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
