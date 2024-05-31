@@ -40,11 +40,23 @@ products.push(
 
 /* Declare an empty array named cart to hold the items in the cart */
 const cart = [];
+
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
+function addProductToCart (productId){
+  const product = products.find(p => p.productId === productId);
+  if (product){
+    const cartItem = cart.find(item => item.productId === productId);
+    if(cartItem){
+      cartItem.quantity++;
+    }else {
+      cart.push({...product, quantity: 1});
+    }
+  }
+};
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
