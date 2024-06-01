@@ -62,6 +62,12 @@ function addProductToCart (productId){
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
+function increaseQuantity(productId) {
+  const cartItem = cart.find(item => item.productId ===  productId);
+  if(cartItem){
+    cartItem.quantity++;
+  }
+};
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
