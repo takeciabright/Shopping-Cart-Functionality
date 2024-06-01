@@ -117,7 +117,7 @@ function emptyCart (){
 */
 function pay (amount){
   const total = cartTotal();
-  return (amount - total).toFixed(2);//Only two numbers after the decimal
+  return (amount - total);//Only two numbers after the decimal
 };
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
