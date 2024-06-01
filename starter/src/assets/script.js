@@ -53,7 +53,9 @@ function addProductToCart (productId){
     if(cartItem){
       cartItem.quantity++;
     }else {
-      cart.push({...product, quantity: 1});
+      product.quantity = 1;
+
+      cart.push(product);
     }
   }
 };
