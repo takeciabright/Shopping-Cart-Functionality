@@ -112,7 +112,7 @@ function cartTotal(){
 
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart (){
-  cart = []
+  cart.length = []
 };
 
 /* Create a function named pay that takes in an amount as an argument
@@ -123,16 +123,25 @@ function emptyCart (){
 */
 let totalPaid = 0;
 
-function pay (amount){
-  const total = cartTotal();
-  return totalPaid - total;
-};
+function pay(amount) {
+  totalPaid += amount;
+  const totalCost = cartTotal();
+  const remainingAmount = totalCost - totalPaid;
+  
+  if (remainingAmount <= 0) {
+    const change = -remainingAmount;
+    totalPaid = 0;
+    return change;
+  }
+  
+  return remainingAmount;
+}
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
 
 /* The following is for running unit tests. 
-   To fully complete this project, it is expected that all tests pass.
+   To fully complete this project, it is expected nthat all tests pass.
    Run the following command in terminal to run tests
    npm run test
 */
