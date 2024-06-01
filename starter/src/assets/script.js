@@ -74,7 +74,15 @@ function increaseQuantity(productId) {
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
-
+function decreaseQuantity(productId){
+  const cartItem = cart.find(item => item.productId === productId);
+  if(cartItem){
+    cartItem.quantity--;
+    if(cartItem.quantity=== 0){    
+      cart = cart.filter(item => item.productId !== productId);
+    }
+  }
+};
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
