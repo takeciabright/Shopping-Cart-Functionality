@@ -121,9 +121,11 @@ function emptyCart (){
   - pay will return a positive number if money should be returned to customer
   Hint: cartTotal function gives us cost of all the products in the cart  
 */
+let totalPaid = 0;
+
 function pay (amount){
   const total = cartTotal();
-  return (amount - total);//Only two numbers after the decimal
+  return totalPaid - total;
 };
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
