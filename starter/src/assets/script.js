@@ -39,7 +39,7 @@ products.push(
 */
 
 /* Declare an empty array named cart to hold the items in the cart */
-const cart = [];
+let cart = [];
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
@@ -80,8 +80,11 @@ function decreaseQuantity(productId){
   const cartItem = cart.find(item => item.productId === productId);
   if(cartItem){
     cartItem.quantity--;
-    if(cartItem.quantity=== 0){    
-      cart = cart.filter(item => item.productId !== productId);
+    if(cartItem.quantity === 0){    
+      const index = cart.findIndex(item => item.productId === productId);
+      if (index !== -1){
+        cart.splice(index, 1);
+      }
     }
   }
 };
