@@ -95,7 +95,11 @@ function decreaseQuantity(productId){
   - removeProductFromCart should remove the product from the cart
 */
 function removeProductFromCart(productId){
-  cart = cart.filter(item => item.productId !== productId);
+  const index = cart.findIndex(item => item.productId === productId);
+  if (index !== -1){
+    cart[index].quantity = 0;
+    cart.splice(index, 1);
+  }
 };
 
 /* Create a function named cartTotal that has no parameters
