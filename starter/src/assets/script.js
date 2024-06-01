@@ -125,16 +125,15 @@ let totalPaid = 0;
 
 function pay(amount) {
   totalPaid += amount;
-  const totalCost = cartTotal();
-  const remainingAmount = totalCost - totalPaid;
   
-  if (remainingAmount <= 0) {
-    const change = -remainingAmount;
+  let remaining = totalPaid - cartTotal();
+  
+  if (remaining >= 0) {
     totalPaid = 0;
-    return change;
+    emptyCart();
   }
   
-  return remainingAmount;
+  return remaining;
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
